@@ -34,6 +34,9 @@
       color: var(--tg-theme-button-text-color);
       border: none;
       font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      height: 50px;
       border-radius: 5px;
       width: 100%;
     }
@@ -48,7 +51,7 @@
   <!-- Add your site or application content here -->
 
   <main>
-    <section>
+    <section class="container" style="margin-top: 1rem">
 <!--      <div id="usercard"></div>-->
       <form action="" method="POST">
         <div class="mb-3 form-floating">
@@ -89,6 +92,12 @@
     let tg = window.Telegram.WebApp;
 
     tg.expand();
+
+    alert(tg.colorScheme)
+
+    if(tg.colorScheme === 'light') {
+      tg.ThemeParams.button_color = '#32CD32'
+    }
 
     let usercard = document.getElementById("usercard"); //получаем блок usercard
 
